@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Коч</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  .container { text-align: center; }
+
+  button {
+    background: linear-gradient(135deg, #e94560, #f5a623);
+    color: white;
+    font-size: 72px;
+    font-weight: bold;
+    padding: 40px 80px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(233, 69, 96, 0.4);
+  }
+  button:hover { transform: scale(1.05); box-shadow: 0 15px 40px rgba(233, 69, 96, 0.6); }
+
+  .photo-wrapper {
+    max-width: 80vw;
+    animation: fadeIn 0.5s ease;
+  }
+  #my-photo {
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    max-width: 100%;
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <button id="koch-btn" onclick="showPhoto()">коч</button>
+  <div id="photo-container" style="display: none;">
+    <img id="my-photo" src="my-photo.jpg" alt="Фото" />
+  </div>
+</div>
+
+<script>
+  function showPhoto() {
+    document.getElementById('koch-btn').style.display = 'none';
+    const photoContainer = document.getElementById('photo-container');
+    photoContainer.style.display = 'block';
+  }
+</script>
+</body>
+</html>
